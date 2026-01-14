@@ -60,30 +60,30 @@ mv cleanpdf ~/bin/
 cleanpdf slides.pdf
 ```
 
-This creates:
+**This creates:**
 
 slides_cleaned.pdf
 
-Specify output file
+**Specify output file**
 ```bash
 cleanpdf slides.pdf --out cleaned.pdf
 ```
 
-Adjust redundancy sensitivity
+**Adjust redundancy sensitivity**
 ```bash
 cleanpdf slides.pdf --threshold 0.85
 ```
 
 Lower threshold = more aggressive removal.
 
-Dry run (no PDF generated)
+**Dry run (no PDF generated)**
 ```bash
 cleanpdf slides.pdf --dry-run
 ```
 
 Shows which slides would be removed.
 
-Verbose mode
+**Verbose mode**
 ```bash
 cleanpdf slides.pdf --verbose
 ```
@@ -96,46 +96,40 @@ Prints detailed decisions during processing.
 
 For each pair of consecutive slides:
 
-Extracts and normalizes text
-
-Compares word overlap
+- Extracts and normalizes text
+- Compares word overlap
 
 If most of slide N's text appears in slide N+1, and slide N+1 contains more content:
 
-Slide N is removed
-
-The final PDF keeps only the most complete slides
+- Slide N is removed
+- The final PDF keeps only the most complete slides
 
 This approach works well for:
 
-Bullet-point reveals
-
-Incremental code blocks
-
-Definitions → examples → proofs
+- Bullet-point reveals
+- Incremental code blocks
+- Definitions → examples → proofs
 
 # Command-line options
 Flag	Description	Default
+
 --out, -o	Output PDF path	<input>_cleaned.pdf
+
 --threshold, -t	Text overlap threshold	0.9
+
 --dry-run	Show removals only	Off
+
 --verbose, -v	Print decisions	Off
-Limitations
 
-Best for text-heavy slides
+## Limitations
 
-May not detect subtle changes in diagrams or equations
+- Best for text-heavy slides
+- May not detect subtle changes in diagrams or equations
+- Assumes redundancy happens between adjacent slides (These can be improved with image hashing in future versions.)
 
-Assumes redundancy happens between adjacent slides
+## Future improvements
 
-(These can be improved with image hashing in future versions.)
-
-Future improvements
-
-Visual similarity fallback for math-heavy slides
-
-Header/footer detection and removal
-
-Batch processing of directories
-
-pipx / pip packaging
+- Visual similarity fallback for math-heavy slides
+- Header/footer detection and removal
+- Batch processing of directories
+- pipx / pip packaging
