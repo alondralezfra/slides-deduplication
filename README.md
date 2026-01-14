@@ -35,6 +35,7 @@ Many lecture PDFs contain dozens of nearly identical slides because instructors 
 Install dependency:
 ```bash
 pip install pymupdf
+```
 
 ### Setup
 
@@ -42,44 +43,54 @@ Save the script as cleanpdf
 
 Make it executable:
 
+```bash
 chmod +x cleanpdf
-
+```
 
 (Optional) Move it into a directory on your $PATH, e.g.:
 
+```bash
 mv cleanpdf ~/bin/
-
+```
 ---
 
 # Usage
 ## Basic usage
+```bash
 cleanpdf slides.pdf
-
+```
 
 This creates:
 
 slides_cleaned.pdf
 
 Specify output file
+```bash
 cleanpdf slides.pdf --out cleaned.pdf
+```
 
 Adjust redundancy sensitivity
+```bash
 cleanpdf slides.pdf --threshold 0.85
-
+```
 
 Lower threshold = more aggressive removal.
 
 Dry run (no PDF generated)
+```bash
 cleanpdf slides.pdf --dry-run
-
+```
 
 Shows which slides would be removed.
 
 Verbose mode
+```bash
 cleanpdf slides.pdf --verbose
-
+```
 
 Prints detailed decisions during processing.
+
+---
 
 # How it works
 
