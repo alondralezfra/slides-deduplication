@@ -2,6 +2,7 @@
 
 **cleanpdf** is a command-line tool that removes redundant and incremental slides from PDF slide decks.
 
+
 Many lecture PDFs contain dozens of nearly identical slides because instructors reveal bullet points or code line-by-line. This tool automatically collapses those sequences and keeps only the most complete version of each slide.
 
 ---
@@ -37,9 +38,10 @@ Install dependency:
 pip install pymupdf
 ```
 
-### Setup
+### Setup (Unix-style CLI)
 
-Save the script as cleanpdf
+
+Save the script as cleanpdf (no `.py` extension).
 
 Make it executable:
 
@@ -47,11 +49,14 @@ Make it executable:
 chmod +x cleanpdf
 ```
 
-(Optional) Move it into a directory on your $PATH, e.g.:
+(Optional) Ensure `~/bin` is in your `$PATH` (default on most systems).
+
+Then move it into a directory on your $PATH, e.g.:
 
 ```bash
 mv cleanpdf ~/bin/
 ```
+> **Windows users:** Use Git Bash or WSL. Native PowerShell does not support Unix shebang execution.
 ---
 
 # Usage
